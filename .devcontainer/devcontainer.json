@@ -8,35 +8,37 @@
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {},
-		"ghcr.io/devcontainers/features/nvidia-cuda:3": {}
+		"ghcr.io/devcontainers/features/nvidia-cuda:3": {},
+
 	},
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				// python core
 				"ms-python.python",
 				"ms-python.vscode-pylance",
 				"ms-python.debugpy",
-				// linting/formatting
 				"charliermarsh.ruff",
-				// notebooks (handy for analysis exploration)
 				"ms-toolsai.jupyter",
 				"ms-toolsai.jupyter-keymap",
-				// yaml editing for your Lightning configs
 				"redhat.vscode-yaml",
-				// pixi support
-				"ms-vscode.makefile-tools"
+				"ms-vscode.makefile-tools",
+				"Anthropic.claude-code",
+				"njpwerner.autodocstring",
+				"streetsidesoftware.code-spell-checker",
+				"tamasfe.even-better-toml"
 			]
 		}
 	},
 	// GPU passthrough. --gpus=all gives the container access to all visible
 	// NVIDIA GPUs via the container toolkit.
+	// // shared memory for DataLoader workers; default 64MB is too small
+	// // and you'll see cryptic "bus error" crashes from torch DataLoader
 	"runArgs": [
-		"--gpus=all",
-		// shared memory for DataLoader workers; default 64MB is too small
-		// and you'll see cryptic "bus error" crashes from torch DataLoader
-		"--shm-size=8g"
+		// "--gpus=all",
+		// "--shm-size=8g"
+		"--env-file",
+		".devcontainer/.env"
 	]
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
