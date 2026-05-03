@@ -1,15 +1,23 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Python 3",
+	"name": "nmr2selfies",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:3-3.13-bookworm",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".",
+		"args": {}
+	},
+	"mounts": [
+		"source=/mnt/e/SMART/data,target=/data,type=bind,consistency=cached",
+		"source=/mnt/e/SMART/checkpoints,target=/checkpoints,type=bind,consistency=cached"
+	],
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers/features/nvidia-cuda:3": {},
-
+		"ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
 	},
 	// Configure tool-specific properties.
 	"customizations": {
@@ -29,6 +37,10 @@
 				"tamasfe.even-better-toml"
 			]
 		}
+	},
+	"containerEnv": {
+		"DATA_PATH": "/data",
+		"CHECKPOINT_PATH": "/checkpoints"
 	},
 	// GPU passthrough. --gpus=all gives the container access to all visible
 	// NVIDIA GPUs via the container toolkit.

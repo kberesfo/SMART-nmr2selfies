@@ -1,0 +1,15 @@
+{
+    "permissions": {
+        "deny": [
+            "Read(./.devcontainer/.env)",
+            "Read(./.devcontainer/.env.*)",
+            "Read(./.env)",
+            "Read(./.env.*)",
+            "Read(./secrets/**)"
+        ]
+    },
+    "enabledPlugins": {
+        "context7@claude-plugins-official": true,
+        "skill-creator@claude-plugins-official": true
+    }
+}
