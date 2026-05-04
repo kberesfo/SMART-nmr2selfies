@@ -67,3 +67,4 @@ data:
     tokenizer_path: tokenizer.json
     batch_size: 128
     num_workers: 4
+
