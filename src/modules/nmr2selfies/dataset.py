@@ -1,5 +1,4 @@
 import json
-import logging
 from pathlib import Path
 
 import numpy as np
@@ -9,8 +8,8 @@ from torch.utils.data import Dataset
 
 from ..config import Config
 from .dataclass import NMRSample
+from .preprocessing import prepare_peaks
 
-log = logging.getLogger(__name__)
 
 class NMRDataset(Dataset):
     # Peaks outside these ranges are sentinel/error values and should be dropped
@@ -43,46 +42,10 @@ class NMRDataset(Dataset):
         return NMRSample(peaks=peaks, token_ids=token_ids)
 
     def _load_peaks(self, row_idx: int) -> torch.Tensor:
-        # reconstruct (N, 3) array from flat data list and shape
-        arr = np.array(self._data[row_idx], dtype=np.float32)
-        arr = arr.reshape(self._shapes[row_idx])  # (N, 3)
+        return prepare_peaks(
+            self._data[row_idx],
+            self._shapes[row_idx]
+        )
 
-        # drop peaks with sentinel values outside the valid HSQC window
-        # inspect_data.py showed min δC/δH of -100,000 — clearly not real peaks
-        valid = (np.abs(arr[:, 0]) <= self._DC_MAX) & (np.abs(arr[:, 1]) <= self._DH_MAX)
-        dropped = int((~valid).sum())
-        if dropped:
-            log.debug(f"idx={self._indices[row_idx]}: dropped {dropped} sentinel peaks")
-        arr = arr[valid]
-
-        arr[:, 2] = self._normalize_intensity(arr[:, 2])
-        return torch.from_numpy(arr)
-
-    def _normalize_intensity(self, I: np.ndarray) -> np.ndarray:
-        # local scaling: p95 of positives -> +1, p05 of negatives -> -1
-        # preserves sign information while bringing intensities into [-1, 1]
-        I_scaled = np.zeros_like(I)
-        eps = 1e-12
-
-        pos = I > 0
-        neg = I < 0
-
-        # scale positives so p95 -> +1
-        if pos.any():
-            p_hi = np.percentile(I[pos], 95)
-            if p_hi > eps:
-                I_scaled[pos] = I[pos] / p_hi
-
-        # scale negatives so p05 (most negative) -> -1
-        if neg.any():
-            n_lo = np.percentile(I[neg], 5)
-            denom = abs(n_lo)
-            if denom > eps:
-                I_scaled[neg] = I[neg] / denom
-
-        return np.clip(I_scaled, -1.0, 1.0)
-
-    def _load_selfies(self, row_idx: int) -> torch.Tensor:
-        # TODO: implement once tokenizer is built
-        # look up SMILES from metadata, convert to SELFIES, tokenize
-        raise NotImplementedError
+    def _load_selfies(self):
+        pass

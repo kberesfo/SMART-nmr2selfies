@@ -14,7 +14,7 @@ class TransformerBlockSettings(BaseModel):
 class EncoderSettings(TransformerBlockSettings):
     # number of input features per peak (δC, δH, intensity)
     peak_feature_dim: int = 3
-
+    
 
 class DecoderSettings(TransformerBlockSettings):
     # p99 SELFIES token length from inspect_data.py; covers all but extreme outliers
