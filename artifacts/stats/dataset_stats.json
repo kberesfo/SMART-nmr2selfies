@@ -1,0 +1,92 @@
+{
+  "row_counts": {
+    "HSQC_NMR": {
+      "train": 437506,
+      "val": 24545,
+      "test": 24157
+    },
+    "C_NMR": {
+      "train": 437679,
+      "val": 24554,
+      "test": 24169
+    },
+    "H_NMR": {
+      "train": 437679,
+      "val": 24554,
+      "test": 24170
+    },
+    "FragIdx": {
+      "train": 438255,
+      "val": 24579,
+      "test": 24194
+    }
+  },
+  "hsqc_train": {
+    "split": "train",
+    "n_molecules": 437506,
+    "peak_counts_raw": {
+      "min": 1.0,
+      "max": 90.0,
+      "mean": 22.486274473950072,
+      "std": 14.467755531922133,
+      "p05": 6.0,
+      "p50": 19.0,
+      "p95": 56.0,
+      "p99": 69.0
+    },
+    "peak_counts_filtered": {
+      "min": 0.0,
+      "max": 90.0,
+      "mean": 22.482402527051057,
+      "std": 14.464938781981521,
+      "p05": 6.0,
+      "p50": 19.0,
+      "p95": 56.0,
+      "p99": 69.0
+    },
+    "sentinel_peaks": {
+      "total": 1694,
+      "molecules_affected": 1353,
+      "fraction_affected": 0.0030925290167449133
+    },
+    "dC": {
+      "min": -140.350006103516,
+      "max": 226.25,
+      "mean": 58.133311203319394,
+      "std": 39.2777202556595
+    },
+    "dH": {
+      "min": -0.8366665840148929,
+      "max": 11.418715476989698,
+      "mean": 3.389498470985033,
+      "std": 2.1857122836973164
+    },
+    "intensity": {
+      "min": -658985.9375,
+      "max": 253208.328125,
+      "mean": 259.897618253756,
+      "std": 6505.192119695598,
+      "negative_fraction": 0.5109406227169758
+    }
+  },
+  "selfies_conversion": {
+    "n_sample": 1000,
+    "failures": 0,
+    "failure_rate": 0.0,
+    "token_length": {
+      "min": 8,
+      "max": 292,
+      "mean": 60.682,
+      "p95": 129.0,
+      "p99": 160.0
+    }
+  },
+  "cross_reference": {
+    "split": "train",
+    "hsqc_rows": 437506,
+    "metadata_entries": 518901,
+    "matched": 437506,
+    "hsqc_missing_metadata": 0,
+    "metadata_without_hsqc": 81395
+  }
+}

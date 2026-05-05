@@ -1,0 +1,1240 @@
+{
+  "n_molecules": 437506,
+  "n_converted": 437497,
+  "n_failed": 9,
+  "failure_rate": 2.0571146452848648e-05,
+  "vocab_size": 249,
+  "special_tokens": [
+    "[PAD]",
+    "[BOS]",
+    "[EOS]",
+    "[UNK]"
+  ],
+  "token_frequencies": [
+    {
+      "token": "[C]",
+      "count": 12054704,
+      "id": 4
+    },
+    {
+      "token": "[Branch1]",
+      "count": 2156535,
+      "id": 5
+    },
+    {
+      "token": "[=C]",
+      "count": 2138590,
+      "id": 6
+    },
+    {
+      "token": "[O]",
+      "count": 2046291,
+      "id": 7
+    },
+    {
+      "token": "[Ring1]",
+      "count": 1793816,
+      "id": 8
+    },
+    {
+      "token": "[=Branch1]",
+      "count": 1156423,
+      "id": 9
+    },
+    {
+      "token": "[=O]",
+      "count": 818905,
+      "id": 10
+    },
+    {
+      "token": "[Ring2]",
+      "count": 760719,
+      "id": 11
+    },
+    {
+      "token": "[N]",
+      "count": 633572,
+      "id": 12
+    },
+    {
+      "token": "[Branch2]",
+      "count": 518931,
+      "id": 13
+    },
+    {
+      "token": "[#Branch1]",
+      "count": 261888,
+      "id": 14
+    },
+    {
+      "token": "[=N]",
+      "count": 206726,
+      "id": 15
+    },
+    {
+      "token": "[=Branch2]",
+      "count": 191093,
+      "id": 16
+    },
+    {
+      "token": "[#Branch2]",
+      "count": 181029,
+      "id": 17
+    },
+    {
+      "token": "[S]",
+      "count": 136760,
+      "id": 18
+    },
+    {
+      "token": "[#C]",
+      "count": 104890,
+      "id": 19
+    },
+    {
+      "token": "[P]",
+      "count": 97278,
+      "id": 20
+    },
+    {
+      "token": "[NH1]",
+      "count": 37466,
+      "id": 21
+    },
+    {
+      "token": "[=Ring1]",
+      "count": 35965,
+      "id": 22
+    },
+    {
+      "token": "[Cl]",
+      "count": 26682,
+      "id": 23
+    },
+    {
+      "token": "[Br]",
+      "count": 14033,
+      "id": 24
+    },
+    {
+      "token": "[O-1]",
+      "count": 12239,
+      "id": 25
+    },
+    {
+      "token": "[N+1]",
+      "count": 11548,
+      "id": 26
+    },
+    {
+      "token": "[=Ring2]",
+      "count": 7698,
+      "id": 27
+    },
+    {
+      "token": "[=S]",
+      "count": 3234,
+      "id": 28
+    },
+    {
+      "token": "[#N]",
+      "count": 2815,
+      "id": 29
+    },
+    {
+      "token": "[=N+1]",
+      "count": 2305,
+      "id": 30
+    },
+    {
+      "token": "[I]",
+      "count": 1051,
+      "id": 31
+    },
+    {
+      "token": "[=O+1]",
+      "count": 889,
+      "id": 32
+    },
+    {
+      "token": "[S+1]",
+      "count": 856,
+      "id": 33
+    },
+    {
+      "token": "[=NH1+1]",
+      "count": 762,
+      "id": 34
+    },
+    {
+      "token": "[Si]",
+      "count": 639,
+      "id": 35
+    },
+    {
+      "token": "[O+1]",
+      "count": 587,
+      "id": 36
+    },
+    {
+      "token": "[Branch3]",
+      "count": 482,
+      "id": 37
+    },
+    {
+      "token": "[H]",
+      "count": 447,
+      "id": 38
+    },
+    {
+      "token": "[NH1+1]",
+      "count": 423,
+      "id": 39
+    },
+    {
+      "token": "[C+1]",
+      "count": 363,
+      "id": 40
+    },
+    {
+      "token": "[C-1]",
+      "count": 362,
+      "id": 41
+    },
+    {
+      "token": "[=P]",
+      "count": 328,
+      "id": 42
+    },
+    {
+      "token": "[CH0]",
+      "count": 279,
+      "id": 43
+    },
+    {
+      "token": "[#N+1]",
+      "count": 271,
+      "id": 44
+    },
+    {
+      "token": "[NH0]",
+      "count": 247,
+      "id": 45
+    },
+    {
+      "token": "[F]",
+      "count": 231,
+      "id": 46
+    },
+    {
+      "token": "[SH1+1]",
+      "count": 223,
+      "id": 47
+    },
+    {
+      "token": "[N-1]",
+      "count": 184,
+      "id": 48
+    },
+    {
+      "token": "[OH0]",
+      "count": 183,
+      "id": 49
+    },
+    {
+      "token": "[CH1]",
+      "count": 130,
+      "id": 50
+    },
+    {
+      "token": "[CH1-1]",
+      "count": 118,
+      "id": 51
+    },
+    {
+      "token": "[B]",
+      "count": 94,
+      "id": 52
+    },
+    {
+      "token": "[=N-1]",
+      "count": 87,
+      "id": 53
+    },
+    {
+      "token": "[As]",
+      "count": 81,
+      "id": 54
+    },
+    {
+      "token": "[Se]",
+      "count": 77,
+      "id": 55
+    },
+    {
+      "token": "[NH1-1]",
+      "count": 70,
+      "id": 56
+    },
+    {
+      "token": "[PH1]",
+      "count": 69,
+      "id": 57
+    },
+    {
+      "token": "[OH1]",
+      "count": 58,
+      "id": 58
+    },
+    {
+      "token": "[CH2]",
+      "count": 57,
+      "id": 59
+    },
+    {
+      "token": "[#C-1]",
+      "count": 56,
+      "id": 60
+    },
+    {
+      "token": "[=NH0]",
+      "count": 53,
+      "id": 61
+    },
+    {
+      "token": "[SH1]",
+      "count": 45,
+      "id": 62
+    },
+    {
+      "token": "[SH0]",
+      "count": 44,
+      "id": 63
+    },
+    {
+      "token": "[Ring3]",
+      "count": 43,
+      "id": 64
+    },
+    {
+      "token": "[BH0]",
+      "count": 42,
+      "id": 65
+    },
+    {
+      "token": "[P+1]",
+      "count": 34,
+      "id": 66
+    },
+    {
+      "token": "[Fe]",
+      "count": 33,
+      "id": 67
+    },
+    {
+      "token": "[B-1]",
+      "count": 32,
+      "id": 68
+    },
+    {
+      "token": "[=OH0]",
+      "count": 32,
+      "id": 69
+    },
+    {
+      "token": "[Co]",
+      "count": 21,
+      "id": 70
+    },
+    {
+      "token": "[Mg]",
+      "count": 20,
+      "id": 71
+    },
+    {
+      "token": "[ClH0]",
+      "count": 19,
+      "id": 72
+    },
+    {
+      "token": "[Hg]",
+      "count": 17,
+      "id": 73
+    },
+    {
+      "token": "[S-1]",
+      "count": 16,
+      "id": 74
+    },
+    {
+      "token": "[Mg-2]",
+      "count": 16,
+      "id": 75
+    },
+    {
+      "token": "[Al]",
+      "count": 15,
+      "id": 76
+    },
+    {
+      "token": "[=S+1]",
+      "count": 13,
+      "id": 77
+    },
+    {
+      "token": "[As+1]",
+      "count": 12,
+      "id": 78
+    },
+    {
+      "token": "[=CH0]",
+      "count": 12,
+      "id": 79
+    },
+    {
+      "token": "[SeH1]",
+      "count": 11,
+      "id": 80
+    },
+    {
+      "token": "[V]",
+      "count": 10,
+      "id": 81
+    },
+    {
+      "token": "[Cu]",
+      "count": 9,
+      "id": 82
+    },
+    {
+      "token": "[SiH2]",
+      "count": 9,
+      "id": 83
+    },
+    {
+      "token": "[#O+1]",
+      "count": 8,
+      "id": 84
+    },
+    {
+      "token": "[Zn]",
+      "count": 8,
+      "id": 85
+    },
+    {
+      "token": "[=Se]",
+      "count": 7,
+      "id": 86
+    },
+    {
+      "token": "[Co-3]",
+      "count": 7,
+      "id": 87
+    },
+    {
+      "token": "[Ca]",
+      "count": 6,
+      "id": 88
+    },
+    {
+      "token": "[CH2-1]",
+      "count": 6,
+      "id": 89
+    },
+    {
+      "token": "[Co-2]",
+      "count": 6,
+      "id": 90
+    },
+    {
+      "token": "[Fe-2]",
+      "count": 6,
+      "id": 91
+    },
+    {
+      "token": "[Fe-3]",
+      "count": 6,
+      "id": 92
+    },
+    {
+      "token": "[Na]",
+      "count": 6,
+      "id": 93
+    },
+    {
+      "token": "[NH3+1]",
+      "count": 6,
+      "id": 94
+    },
+    {
+      "token": "[=PH1]",
+      "count": 5,
+      "id": 95
+    },
+    {
+      "token": "[=SH1]",
+      "count": 5,
+      "id": 96
+    },
+    {
+      "token": "[W]",
+      "count": 5,
+      "id": 97
+    },
+    {
+      "token": "[NH2]",
+      "count": 5,
+      "id": 98
+    },
+    {
+      "token": "[Mo]",
+      "count": 4,
+      "id": 99
+    },
+    {
+      "token": "[Co+1]",
+      "count": 4,
+      "id": 100
+    },
+    {
+      "token": "[=As]",
+      "count": 4,
+      "id": 101
+    },
+    {
+      "token": "[Co+2]",
+      "count": 4,
+      "id": 102
+    },
+    {
+      "token": "[#CH0]",
+      "count": 4,
+      "id": 103
+    },
+    {
+      "token": "[Sb]",
+      "count": 4,
+      "id": 104
+    },
+    {
+      "token": "[NH2+1]",
+      "count": 3,
+      "id": 105
+    },
+    {
+      "token": "[Sn]",
+      "count": 3,
+      "id": 106
+    },
+    {
+      "token": "[=OH1+1]",
+      "count": 3,
+      "id": 107
+    },
+    {
+      "token": "[Fe+2]",
+      "count": 3,
+      "id": 108
+    },
+    {
+      "token": "[Se+1]",
+      "count": 3,
+      "id": 109
+    },
+    {
+      "token": "[CH3]",
+      "count": 3,
+      "id": 110
+    },
+    {
+      "token": "[=Mn]",
+      "count": 3,
+      "id": 111
+    },
+    {
+      "token": "[Ni]",
+      "count": 3,
+      "id": 112
+    },
+    {
+      "token": "[=Si]",
+      "count": 3,
+      "id": 113
+    },
+    {
+      "token": "[=Fe]",
+      "count": 3,
+      "id": 114
+    },
+    {
+      "token": "[=B]",
+      "count": 3,
+      "id": 115
+    },
+    {
+      "token": "[Te]",
+      "count": 3,
+      "id": 116
+    },
+    {
+      "token": "[Au]",
+      "count": 3,
+      "id": 117
+    },
+    {
+      "token": "[Cr]",
+      "count": 3,
+      "id": 118
+    },
+    {
+      "token": "[=SH0]",
+      "count": 3,
+      "id": 119
+    },
+    {
+      "token": "[Pb]",
+      "count": 3,
+      "id": 120
+    },
+    {
+      "token": "[IH0]",
+      "count": 3,
+      "id": 121
+    },
+    {
+      "token": "[=CH1-1]",
+      "count": 2,
+      "id": 122
+    },
+    {
+      "token": "[I+1]",
+      "count": 2,
+      "id": 123
+    },
+    {
+      "token": "[K]",
+      "count": 2,
+      "id": 124
+    },
+    {
+      "token": "[Ag]",
+      "count": 2,
+      "id": 125
+    },
+    {
+      "token": "[BrH0]",
+      "count": 2,
+      "id": 126
+    },
+    {
+      "token": "[#Ring1]",
+      "count": 2,
+      "id": 127
+    },
+    {
+      "token": "[OH2+1]",
+      "count": 2,
+      "id": 128
+    },
+    {
+      "token": "[Fe+3]",
+      "count": 2,
+      "id": 129
+    },
+    {
+      "token": "[=Mo]",
+      "count": 2,
+      "id": 130
+    },
+    {
+      "token": "[VH1]",
+      "count": 2,
+      "id": 131
+    },
+    {
+      "token": "[Pt]",
+      "count": 2,
+      "id": 132
+    },
+    {
+      "token": "[P-1]",
+      "count": 2,
+      "id": 133
+    },
+    {
+      "token": "[Hg+1]",
+      "count": 2,
+      "id": 134
+    },
+    {
+      "token": "[Ho]",
+      "count": 2,
+      "id": 135
+    },
+    {
+      "token": "[Bi]",
+      "count": 2,
+      "id": 136
+    },
+    {
+      "token": "[=V]",
+      "count": 2,
+      "id": 137
+    },
+    {
+      "token": "[In]",
+      "count": 2,
+      "id": 138
+    },
+    {
+      "token": "[=P+1]",
+      "count": 1,
+      "id": 139
+    },
+    {
+      "token": "[=Branch3]",
+      "count": 1,
+      "id": 140
+    },
+    {
+      "token": "[PH0]",
+      "count": 1,
+      "id": 141
+    },
+    {
+      "token": "[Mg+2]",
+      "count": 1,
+      "id": 142
+    },
+    {
+      "token": "[Mn]",
+      "count": 1,
+      "id": 143
+    },
+    {
+      "token": "[TeH2]",
+      "count": 1,
+      "id": 144
+    },
+    {
+      "token": "[Sm]",
+      "count": 1,
+      "id": 145
+    },
+    {
+      "token": "[Cr+6]",
+      "count": 1,
+      "id": 146
+    },
+    {
+      "token": "[=AsH1]",
+      "count": 1,
+      "id": 147
+    },
+    {
+      "token": "[Sb+3]",
+      "count": 1,
+      "id": 148
+    },
+    {
+      "token": "[SeH2]",
+      "count": 1,
+      "id": 149
+    },
+    {
+      "token": "[Co-4]",
+      "count": 1,
+      "id": 150
+    },
+    {
+      "token": "[Ni-2]",
+      "count": 1,
+      "id": 151
+    },
+    {
+      "token": "[Se-2]",
+      "count": 1,
+      "id": 152
+    },
+    {
+      "token": "[K+1]",
+      "count": 1,
+      "id": 153
+    },
+    {
+      "token": "[Zn+2]",
+      "count": 1,
+      "id": 154
+    },
+    {
+      "token": "[Na+1]",
+      "count": 1,
+      "id": 155
+    },
+    {
+      "token": "[Ca+2]",
+      "count": 1,
+      "id": 156
+    },
+    {
+      "token": "[=SeH1]",
+      "count": 1,
+      "id": 157
+    },
+    {
+      "token": "[Os]",
+      "count": 1,
+      "id": 158
+    },
+    {
+      "token": "[Sc]",
+      "count": 1,
+      "id": 159
+    },
+    {
+      "token": "[Er]",
+      "count": 1,
+      "id": 160
+    },
+    {
+      "token": "[Ir]",
+      "count": 1,
+      "id": 161
+    },
+    {
+      "token": "[Hf]",
+      "count": 1,
+      "id": 162
+    },
+    {
+      "token": "[Tb]",
+      "count": 1,
+      "id": 163
+    },
+    {
+      "token": "[=Te]",
+      "count": 1,
+      "id": 164
+    },
+    {
+      "token": "[Cd]",
+      "count": 1,
+      "id": 165
+    },
+    {
+      "token": "[Mn+2]",
+      "count": 1,
+      "id": 166
+    },
+    {
+      "token": "[SnH4]",
+      "count": 1,
+      "id": 167
+    },
+    {
+      "token": "[Cl+2]",
+      "count": 1,
+      "id": 168
+    },
+    {
+      "token": "[Br+2]",
+      "count": 1,
+      "id": 169
+    },
+    {
+      "token": "[Ba]",
+      "count": 1,
+      "id": 170
+    },
+    {
+      "token": "[Fr]",
+      "count": 1,
+      "id": 171
+    },
+    {
+      "token": "[AsH3]",
+      "count": 1,
+      "id": 172
+    },
+    {
+      "token": "[OH1+1]",
+      "count": 1,
+      "id": 173
+    },
+    {
+      "token": "[AlH3]",
+      "count": 1,
+      "id": 174
+    },
+    {
+      "token": "[Lu+3]",
+      "count": 1,
+      "id": 175
+    },
+    {
+      "token": "[Gd]",
+      "count": 1,
+      "id": 176
+    },
+    {
+      "token": "[Tm]",
+      "count": 1,
+      "id": 177
+    },
+    {
+      "token": "[Cu+2]",
+      "count": 1,
+      "id": 178
+    },
+    {
+      "token": "[Zr]",
+      "count": 1,
+      "id": 179
+    },
+    {
+      "token": "[U]",
+      "count": 1,
+      "id": 180
+    },
+    {
+      "token": "[Ar]",
+      "count": 1,
+      "id": 181
+    },
+    {
+      "token": "[SiH4]",
+      "count": 1,
+      "id": 182
+    },
+    {
+      "token": "[Dy]",
+      "count": 1,
+      "id": 183
+    },
+    {
+      "token": "[Tl]",
+      "count": 1,
+      "id": 184
+    },
+    {
+      "token": "[Eu]",
+      "count": 1,
+      "id": 185
+    },
+    {
+      "token": "[H+1]",
+      "count": 1,
+      "id": 186
+    },
+    {
+      "token": "[Ge]",
+      "count": 1,
+      "id": 187
+    },
+    {
+      "token": "[Ce]",
+      "count": 1,
+      "id": 188
+    },
+    {
+      "token": "[Be+2]",
+      "count": 1,
+      "id": 189
+    },
+    {
+      "token": "[Nb]",
+      "count": 1,
+      "id": 190
+    },
+    {
+      "token": "[Pr]",
+      "count": 1,
+      "id": 191
+    },
+    {
+      "token": "[Cs]",
+      "count": 1,
+      "id": 192
+    },
+    {
+      "token": "[Yb]",
+      "count": 1,
+      "id": 193
+    },
+    {
+      "token": "[Re]",
+      "count": 1,
+      "id": 194
+    },
+    {
+      "token": "[Cd+2]",
+      "count": 1,
+      "id": 195
+    },
+    {
+      "token": "[Rb]",
+      "count": 1,
+      "id": 196
+    },
+    {
+      "token": "[SiH1]",
+      "count": 1,
+      "id": 197
+    },
+    {
+      "token": "[La]",
+      "count": 1,
+      "id": 198
+    },
+    {
+      "token": "[Sr+2]",
+      "count": 1,
+      "id": 199
+    },
+    {
+      "token": "[Ta]",
+      "count": 1,
+      "id": 200
+    },
+    {
+      "token": "[Ga]",
+      "count": 1,
+      "id": 201
+    },
+    {
+      "token": "[Ti]",
+      "count": 1,
+      "id": 202
+    },
+    {
+      "token": "[Pd]",
+      "count": 1,
+      "id": 203
+    },
+    {
+      "token": "[Pb+2]",
+      "count": 1,
+      "id": 204
+    },
+    {
+      "token": "[He]",
+      "count": 1,
+      "id": 205
+    },
+    {
+      "token": "[S-2]",
+      "count": 1,
+      "id": 206
+    },
+    {
+      "token": "[Y]",
+      "count": 1,
+      "id": 207
+    },
+    {
+      "token": "[Cl+3]",
+      "count": 1,
+      "id": 208
+    },
+    {
+      "token": "[Sn+4]",
+      "count": 1,
+      "id": 209
+    },
+    {
+      "token": "[Sn+2]",
+      "count": 1,
+      "id": 210
+    },
+    {
+      "token": "[Bi+3]",
+      "count": 1,
+      "id": 211
+    },
+    {
+      "token": "[Fe-4]",
+      "count": 1,
+      "id": 212
+    },
+    {
+      "token": "[Cl-1]",
+      "count": 1,
+      "id": 213
+    },
+    {
+      "token": "[#S]",
+      "count": 1,
+      "id": 214
+    },
+    {
+      "token": "[TlH2]",
+      "count": 1,
+      "id": 215
+    },
+    {
+      "token": "[Cr+3]",
+      "count": 1,
+      "id": 216
+    },
+    {
+      "token": "[HH1]",
+      "count": 1,
+      "id": 217
+    },
+    {
+      "token": "[Sr]",
+      "count": 1,
+      "id": 218
+    },
+    {
+      "token": "[Fe+1]",
+      "count": 1,
+      "id": 219
+    },
+    {
+      "token": "[SnH1]",
+      "count": 1,
+      "id": 220
+    },
+    {
+      "token": "[Ru+2]",
+      "count": 1,
+      "id": 221
+    },
+    {
+      "token": "[Zn-1]",
+      "count": 1,
+      "id": 222
+    },
+    {
+      "token": "[=Mo+6]",
+      "count": 1,
+      "id": 223
+    },
+    {
+      "token": "[Ra]",
+      "count": 1,
+      "id": 224
+    },
+    {
+      "token": "[SiH3]",
+      "count": 1,
+      "id": 225
+    },
+    {
+      "token": "[=Cr]",
+      "count": 1,
+      "id": 226
+    },
+    {
+      "token": "[CaH2]",
+      "count": 1,
+      "id": 227
+    },
+    {
+      "token": "[=Mg]",
+      "count": 1,
+      "id": 228
+    },
+    {
+      "token": "[Li+1]",
+      "count": 1,
+      "id": 229
+    },
+    {
+      "token": "[AsH1]",
+      "count": 1,
+      "id": 230
+    },
+    {
+      "token": "[=Ti]",
+      "count": 1,
+      "id": 231
+    },
+    {
+      "token": "[=Zn]",
+      "count": 1,
+      "id": 232
+    },
+    {
+      "token": "[Rb+1]",
+      "count": 1,
+      "id": 233
+    },
+    {
+      "token": "[Xe]",
+      "count": 1,
+      "id": 234
+    },
+    {
+      "token": "[Ne]",
+      "count": 1,
+      "id": 235
+    },
+    {
+      "token": "[RaH2]",
+      "count": 1,
+      "id": 236
+    },
+    {
+      "token": "[Lu]",
+      "count": 1,
+      "id": 237
+    },
+    {
+      "token": "[InH3]",
+      "count": 1,
+      "id": 238
+    },
+    {
+      "token": "[Ac]",
+      "count": 1,
+      "id": 239
+    },
+    {
+      "token": "[BaH2]",
+      "count": 1,
+      "id": 240
+    },
+    {
+      "token": "[Sb+5]",
+      "count": 1,
+      "id": 241
+    },
+    {
+      "token": "[=Hg]",
+      "count": 1,
+      "id": 242
+    },
+    {
+      "token": "[=Cd]",
+      "count": 1,
+      "id": 243
+    },
+    {
+      "token": "[VH4]",
+      "count": 1,
+      "id": 244
+    },
+    {
+      "token": "[=Ga]",
+      "count": 1,
+      "id": 245
+    },
+    {
+      "token": "[Al+3]",
+      "count": 1,
+      "id": 246
+    },
+    {
+      "token": "[Be]",
+      "count": 1,
+      "id": 247
+    },
+    {
+      "token": "[=Ca]",
+      "count": 1,
+      "id": 248
+    }
+  ]
+}

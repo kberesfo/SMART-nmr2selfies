@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Environment
 
-The project runs in a VS Code Dev Container (Python 3.13, NVIDIA CUDA). Data is mounted from the host at `/data`; checkpoints at `/checkpoints`. Container env vars (`DATA_PATH`, `CHECKPOINT_PATH`) are set in `.devcontainer/devcontainer.json`.
+The project runs in a VS Code Dev Container (Python 3.13, NVIDIA CUDA). Data is mounted from the host at `/data`; checkpoints at `/checkpoints`. Container env vars (`APP_DATA_PATH`, `CHECKPOINT_PATH`) are set in `.devcontainer/devcontainer.json`.
 
 Secrets (W&B API key) go in `.devcontainer/.env` — this file must not be committed.
 

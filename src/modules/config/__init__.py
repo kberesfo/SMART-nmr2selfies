@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 from .app import AppSettings
-from .model import DecoderSettings, EncoderSettings, ModelSettings, TokenizerSettings, TransformerBlockSettings
+from .model import DecoderSettings, EncoderSettings, ModelSettings, TransformerBlockSettings
 from .train import TrainSettings
 
 
@@ -17,7 +17,6 @@ __all__ = [
     "TransformerBlockSettings",
     "EncoderSettings",
     "DecoderSettings",
-    "TokenizerSettings",
     "TrainSettings",
     "Config",
 ]

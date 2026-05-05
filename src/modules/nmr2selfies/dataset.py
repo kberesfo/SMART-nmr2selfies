@@ -7,7 +7,7 @@ import torch
 from torch.utils.data import Dataset
 
 from ..config import Config
-from .dataclass import NMRSample
+from .dataclasses import NMRSample
 from .preprocessing import prepare_peaks
 
 
