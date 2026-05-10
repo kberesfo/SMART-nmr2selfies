@@ -1,9 +1,8 @@
-import math
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 from .artifacts import PeakNormConfig
+from .attention import MultiHeadAttention
 
 from ..config import EncoderSettings
 
@@ -103,9 +102,9 @@ class EncoderLayer(nn.Module):
     def __init__(self, cfg: EncoderSettings):
         super().__init__()
 
-        self.self_attn = nn.MultiheadAttention(
+        self.self_attn = MultiHeadAttention(
             cfg.d_model, cfg.num_heads, dropout=cfg.dropout)
-        
+
         self.ff = nn.Sequential(
             nn.Linear(cfg.d_model, cfg.ffn_dim),
             nn.GELU(),
@@ -118,6 +117,7 @@ class EncoderLayer(nn.Module):
         self.norm2 = nn.LayerNorm(cfg.d_model)
         self.drop = nn.Dropout(cfg.dropout)
 
+    # NOTE: THIS STILL NEEDS REVIEW
     def forward(self, x, peak_mask=None) -> torch.Tensor:
         # (B, N, D)
         B, N, _ = x.shape
@@ -127,17 +127,22 @@ class EncoderLayer(nn.Module):
 
         x = self.norm1(x + self.drop(a))
         x = self.norm2(x + self.drop(self.ff(x)))
-        
+
         return x
 
 
+# NOTE: STILL NEEDS REVIEW
 class Encoder(nn.Module):
 
-    def __init__(self, cfg: EncoderSettings):
+    def __init__(self, cfg: EncoderSettings, stats: PeakNormConfig):
         super().__init__()
-        pass
-
-    def encode(self, peaks, peak_mask):
-        raise NotImplementedError(
-            "Encoder encode method not implemented yet"
+        self.embed = PeakEmbedding(cfg, stats)
+        self.layers = nn.ModuleList(
+            [EncoderLayer(cfg) for _ in range(cfg.n_encoder_layers)]
         )
+
+    def forward(self, peaks, peak_mask):
+        x = self.embed(peaks)
+        for layer in self.layers:
+            x = layer(x, peak_mask)
+        return x

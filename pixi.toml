@@ -6,7 +6,7 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
-"train" = {cmd = ""}
+"train" = {cmd = "", env = {APP_DATA_PATH = "$DATA_PATH", APP_CHECKPOINT_PATH = "$CHECKPOINT_PATH", APP_WANDB_API_KEY = "$WANDB_API_KEY"}}
 
 [dependencies]
 python = ">=3.13,<3.14"
@@ -24,6 +24,10 @@ sympy = "==1.13.1"
 pyarrow = ">=24.0.0, <25"
 
 [feature.dev]
+
+[feature.dev.tasks]
+"build-vocab" = {cmd = "python -m scripts.build_vocab", env = {APP_DATA_PATH = "$DATA_PATH", CHECKPOINT_PATH = "$CHECKPOINT_PATH"}}
+"inspect-data" = {cmd = "python -m scripts.inspect_data", env = {APP_DATA_PATH = "$DATA_PATH", CHECKPOINT_PATH = "$CHECKPOINT_PATH"}}
 
 [environments]
 default = { features = [], solve-group = "default" }

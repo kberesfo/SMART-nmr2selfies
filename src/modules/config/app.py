@@ -13,6 +13,7 @@ class AppSettings(BaseSettings):
 
     data_path: Path = Path("/data")
     checkpoint_path: Path = Path("/checkpoints")
+    wandb_api_key: str = ""
     wandb_project: str = "nmr2selfies"
     wandb_entity: str | None = None
     device: str = "cuda"

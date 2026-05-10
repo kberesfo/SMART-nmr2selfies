@@ -39,8 +39,8 @@
 		}
 	},
 	"containerEnv": {
-		"APP_DATA_PATH": "/data",
-		"APP_CHECKPOINT_PATH": "/checkpoints"
+		"DATA_PATH": "/data",
+		"CHECKPOINT_PATH": "/checkpoints"
 	},
 	// GPU passthrough. --gpus=all gives the container access to all visible
 	// NVIDIA GPUs via the container toolkit.
