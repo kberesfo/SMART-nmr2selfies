@@ -55,9 +55,12 @@ def main() -> None:
     log.info(f"Wrote {stats_path}")
 
     # print summary
-    print(f"\n  vocab_size:    {stats.vocab_size}")
-    print(f"  converted:     {stats.n_converted:,} / {stats.n_molecules:,}")
-    print(f"  failure_rate:  {stats.failure_rate:.4%}")
+    print(f"\n  vocab_size:      {stats.vocab_size}")
+    print(f"  converted:       {stats.n_converted:,} / {stats.n_molecules:,}")
+    print(f"  failure_rate:    {stats.failure_rate:.4%}")
+    print(f"\n  seq_len p50:     {stats.seq_len.p50}")
+    print(f"  seq_len p99:     {stats.seq_len.p99}  ← max_seq_length written to tokenizer.json")
+    print(f"  seq_len max:     {stats.seq_len.max}")
     print(f"\n  Top 10 tokens:")
     for tf in stats.token_frequencies[:10]:
         print(f"    id={tf.id:>4}  count={tf.count:>8,}  {tf.token}")

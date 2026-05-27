@@ -42,6 +42,7 @@ class TokenizerConfig(BaseModel):
     eos_token_id: int
     unk_token_id: int
     special_tokens: list[str]
+    max_seq_length: int  # p99 token length from dataset stats
 
     @model_validator(mode="after")
     def check_vocab_size(self) -> "TokenizerConfig":
@@ -65,6 +66,14 @@ class TokenizerConfig(BaseModel):
                 raise ValueError(
                     f"{token} has id {actual_id} in vocab but expected {expected_id}"
                 )
+        return self
+
+    @model_validator(mode="after")
+    def check_max_seq_length(self) -> "TokenizerConfig":
+        if self.max_seq_length <= 0:
+            raise ValueError(
+                f"max_seq_length must be positive, got {self.max_seq_length}"
+            )
         return self
 
     @classmethod

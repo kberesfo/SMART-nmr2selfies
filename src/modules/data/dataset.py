@@ -1,14 +1,13 @@
-import json
-from pathlib import Path
-
-import numpy as np
-import pyarrow.parquet as pq
 import torch
+import pyarrow.parquet as pq
+
+from pathlib import Path
 from torch.utils.data import Dataset
 
-from ..config import Config
 from .dataclasses import NMRSample
 from .preprocessing import prepare_peaks
+
+from ..config import AppSettings
 
 
 class NMRDataset(Dataset):
@@ -16,11 +15,11 @@ class NMRDataset(Dataset):
     _DC_MAX = 300.0   # δC: typical HSQC range 0–220 ppm
     _DH_MAX = 20.0    # δH: typical HSQC range 0–12 ppm
 
-    def __init__(self, cfg: Config, split: str, metadata: dict) -> None:
+    def __init__(self, cfg: AppSettings, split: str, metadata: dict) -> None:
         super().__init__()
 
         # load the parquet file for this split into memory
-        path = Path(cfg.app.data_path) / "arrow" / split / "HSQC_NMR.parquet"
+        path = Path(cfg.data_path) / "arrow" / split / "HSQC_NMR.parquet"
         table = pq.read_table(path)
         rows = table.to_pydict()
 

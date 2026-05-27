@@ -10,6 +10,13 @@
     "[EOS]",
     "[UNK]"
   ],
+  "seq_len": {
+    "min": 1,
+    "max": 955,
+    "mean": 58.109445321910776,
+    "p50": 51,
+    "p99": 180
+  },
   "token_frequencies": [
     {
       "token": "[C]",

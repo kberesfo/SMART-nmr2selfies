@@ -18,9 +18,7 @@ class EncoderSettings(TransformerBlockSettings):
 
 class DecoderSettings(TransformerBlockSettings):
     d_ff: int = 1024
-    # p99 SELFIES token length from inspect_data.py; covers all but extreme outliers
-    max_seq_length: int = 160
-
+    
 
 class ModelSettings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="MODEL_", extra="ignore")

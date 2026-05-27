@@ -1,12 +1,13 @@
 import json
 import logging
+import numpy as np
 import pyarrow.parquet as pq
 import selfies as sf
 
 from pathlib import Path
 from collections import Counter
 
-from .dataclasses import Tokenizer, VocabStats, TokenFrequency
+from .dataclasses import Tokenizer, VocabStats, TokenFrequency, SeqLenStats
 
 log = logging.getLogger(__name__)
 
@@ -76,6 +77,17 @@ def build_vocab(
         f"Converted {n_converted:,} / {n_molecules:,} molecules ({n_failed:,} failed)")
     log.info(f"Unique SELFIES tokens: {len(token_counts):,}")
 
+    # sequence length distribution — p99 is used as max_seq_length in the tokenizer artifact
+    arr = np.array(lengths, dtype=np.int32)
+    seq_len = SeqLenStats(
+        min=int(arr.min()),
+        max=int(arr.max()),
+        mean=float(arr.mean()),
+        p50=int(np.percentile(arr, 50, method="higher")),
+        p99=int(np.percentile(arr, 99, method="higher")),
+    )
+    log.info(f"Sequence lengths — p50={seq_len.p50}  p99={seq_len.p99}  max={seq_len.max}")
+
     # build vocab: special tokens first (IDs 0-3), then SELFIES tokens by frequency
     vocab: dict[str, int] = {tok: i for i, tok in enumerate(SPECIAL_TOKENS)}
     for token, _ in token_counts.most_common():
@@ -90,6 +102,7 @@ def build_vocab(
         eos_token_id=EOS_TOKEN_ID,
         unk_token_id=UNK_TOKEN_ID,
         special_tokens=SPECIAL_TOKENS,
+        max_seq_length=seq_len.p99,
     )
 
     # build stats — include all tokens with their assigned IDs
@@ -105,6 +118,7 @@ def build_vocab(
         failure_rate=failure_rate,
         vocab_size=len(vocab),
         special_tokens=SPECIAL_TOKENS,
+        seq_len=seq_len,
         token_frequencies=token_frequencies,
     )
 
